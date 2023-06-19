@@ -6,14 +6,14 @@ function App() {
   return (
     <div className={AppStyle.App}>
       <div className={AppStyle.Todo}>
-        <myFeatures.TodoImport/>
-        <myFeatures.TodoItem todoItemName="Clean up bedroom"/>
-        <myFeatures.TodoItem todoItemName="Buy some milk"/>
-        <myFeatures.TodoItem todoItemName="Jogging"/>
-        <myFeatures.TodoItem todoItemName="Learn React"/>
-        <myFeatures.TodoItem todoItemName="Doing Exercises"/>
-    </div>
+        <myFeatures.TodoImport />
+        <myFeatures.TodoItem todoItemName="Clean up bedroom" />
+        <myFeatures.TodoItem todoItemName="Buy some milk" />
+        <myFeatures.TodoItem todoItemName="Jogging" />
+        <myFeatures.TodoItem todoItemName="Learn React" />
+        <myFeatures.TodoItem todoItemName="Doing Exercises" />
       </div>
+    </div>
   );
 }
 
