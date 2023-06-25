@@ -1,1 +1,0 @@
-Tất cả các tính năng đều ở thư mục này. 
