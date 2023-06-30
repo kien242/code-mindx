@@ -6,6 +6,7 @@ import ResponsiveDrawer from './Component/nav_test/index.js';
 function App() {
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className={`container-fluid ${AppStyle.App}`}>
       <div className='row'>
         <div className='col-4'>
@@ -15,6 +16,10 @@ function App() {
             followers={"14"}
             following={"15"}
           />
+=======
+    <Container>
+      <ResponsiveDrawer/>
+>>>>>>> main
 =======
     <Container>
       <ResponsiveDrawer/>
