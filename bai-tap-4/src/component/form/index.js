@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
@@ -28,7 +29,7 @@ function FormFloatingBasicExample() {
             >
                 <Form.Control type="text" placeholder="name@example.com" />
             </FloatingLabel>
-
+            <Button>add</Button>
         </>
     );
 }

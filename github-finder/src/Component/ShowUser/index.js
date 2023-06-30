@@ -1,7 +1,6 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import style from "./style.module.scss"
-import { FaTrashAlt } from 'react-icons/fa';
 
 export const showUser = (props) => {
   return (
@@ -18,7 +17,7 @@ export const showUser = (props) => {
                   <h5 className={`card-title`}>{props.UserName}</h5>
                 </div>
                 <div className='col-4'>
-                  <button type="button" className="btn btn-primary"><FaTrashAlt /></button>
+                  <button type="button" className="btn btn-primary">dsafkjh</button>
                 </div>
               </div>
             </div>

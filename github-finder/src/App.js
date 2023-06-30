@@ -6,7 +6,7 @@ function App() {
   return (
     <div className={`container-fluid ${AppStyle.App}`}>
       <div className='row'>
-        <div className='col-3'>
+        <div className='col-4'>
           <ShowUser.showUser
             UserAvatar="https://avatars.githubusercontent.com/u/44479300?v=4"
             UserName="zmkfirmware"
@@ -21,7 +21,7 @@ function App() {
             following={"15"}
           />
         </div>
-        <div className='col-9'>
+        <div className='col-8'>
           <ShowRepo.showRepo />
           <ShowRepo.showRepo />
         </div>
