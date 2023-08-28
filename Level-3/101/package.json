@@ -8,6 +8,7 @@
     "start:dev:js": "nodemon index.js",
     "start:dev:ts": "nodemon index.ts"
   },
+  "type": "module",
   "author": "",
   "license": "MIT",
   "dependencies": {
