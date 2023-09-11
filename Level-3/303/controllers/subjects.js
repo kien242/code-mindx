@@ -7,6 +7,7 @@ const subjectController = {
         case "STUDENT":
           res.status(200).send({
             message: "thanh cong",
+            time: new Date().toString(),
             data: listSubjects.map((item) => {
               const newItem = {
                 ...item,

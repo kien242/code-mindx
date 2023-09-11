@@ -5,6 +5,7 @@ import subjectMiddleWares from "./middlewares/subjects.js";
 
 const app = express();
 const PORT = 2402;
+const version = "/api/v1";
 
 app.use(express.json());
 app.use("/api/v1", appRouter);
@@ -33,7 +34,7 @@ export const listSubjects = [
   },
 ];
 app.get(
-  "/subjects",
+  `${version}/subjects`,
   subjectMiddleWares.isValidAuth,
   subjectController.getDataSubject
 );
