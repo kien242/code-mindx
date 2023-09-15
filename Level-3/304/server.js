@@ -1,6 +1,8 @@
 import express from "express";
 import crypto from "crypto";
 import { generateToken } from "./utils/index.js";
+import connect from "./database/index.js";
+connect();
 
 const app = express();
 const PORT = 3000;
