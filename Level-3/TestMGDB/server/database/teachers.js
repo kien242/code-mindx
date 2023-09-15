@@ -17,6 +17,7 @@ async function addTeacherToDb(req, res) {
     message: "Added new teacher",
   });
 }
+
 async function getAllTeacher(req, res) {
   const allTeacher = await teachersModel.find();
   res.status(200).send({
@@ -24,8 +25,11 @@ async function getAllTeacher(req, res) {
     data: allTeacher,
   });
 }
+
 async function getTeacherByName(req, res) {}
+
 async function deleteTeacherByName(req, res) {}
+
 async function updateTeacherByName(req, res) {}
 
 export {
