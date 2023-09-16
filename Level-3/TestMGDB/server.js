@@ -6,6 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
+  console.log("fasdh");
   res.send({
     message: "Thanh cong",
   });

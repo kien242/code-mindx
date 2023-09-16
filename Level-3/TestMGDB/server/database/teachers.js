@@ -9,7 +9,7 @@ async function addTeacherToDb(req, res) {
   });
   try {
     newTeacher.save();
-    console.log("jhasd");
+    console.log("Added new teacher");
   } catch (error) {
     console.log(error);
   }
