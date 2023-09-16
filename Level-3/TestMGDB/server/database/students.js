@@ -15,7 +15,7 @@ async function addStudentToDb(req, res) {
     console.log(error);
   }
   res.status(202).send({
-    message: `thanh cong luu vo`,
+    message: `lưu thành công vào db`,
   });
 }
 async function getAllStudent(req, res) {}

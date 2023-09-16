@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { addTeacherToDb } from "./teachers.js";
+import { addTeacherToDb, getAllTeacher } from "./teachers.js";
 import { addStudentToDb } from "./students.js";
 
 import "dotenv/config";
@@ -14,6 +14,7 @@ const dbFunction = {
   },
 
   addTeacherToDb,
+  getAllTeacher,
   addStudentToDb,
 };
 
