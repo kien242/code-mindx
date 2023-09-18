@@ -12,6 +12,7 @@ export async function addTeacherToDb(req, res) {
     newTeacher.save();
     res.status(202).send({
       message: "Added new teacher",
+      data: newTeacher,
     });
   } catch (error) {
     console.log(error);
@@ -19,12 +20,21 @@ export async function addTeacherToDb(req, res) {
 }
 
 export async function getAllTeacher(req, res) {
-  const teachers = await teachersModel.find();
-  console.log("first");
-  res.status(200).send({
-    message: "thanh cong",
-    data: teachers,
-  });
+  try {
+    const teachers = await teachersModel.find();
+    console.log(teachers);
+    if (!teachers) {
+      throw new Error("Database empty");
+    }
+    res.status(201).send({
+      message: "thanh cong",
+      data: teachers,
+    });
+  } catch (error) {
+    res.status(201).send({
+      message: error.message,
+    });
+  }
 }
 
 // truyền vào một query là teacherName
@@ -52,17 +62,26 @@ export async function getTeacherByName(req, res) {
 
 //Tìm kiến một giáo viên theo ID, truyền vào một query là ID
 export async function getTeacherById(req, res) {
-  const id = req.query.ID;
+  const id = req.query.id;
   try {
-    const teacher = await teachersModel.findOne({ _id: id });
-    res.status(200).send({
-      message: "Thành công tìm thấy",
-      data: teacher,
-    });
+    const check = await teachersModel.findById(id).exec();
+    if (!check) {
+      throw new Error("ID not found");
+    }
+    try {
+      const teacher = await teachersModel.findOne({ _id: id });
+      res.status(200).send({
+        message: "Tim thay giao vien",
+        data: teacher,
+      });
+    } catch (error) {
+      res.status(403).send({
+        message: error.message,
+      });
+    }
   } catch (error) {
-    res.status(403).send({
-      message: "Khong tim thay giao vien co ID la " + id,
-    });
+    console.log("2");
+    res.status(403).send({ message: error.message });
   }
 }
 
@@ -72,7 +91,7 @@ export async function updateTeacherByID(req, res) {
 
   try {
     const check = await teachersModel.findById(id).exec();
-    if (check === null) {
+    if (!check) {
       throw new Error("ID not found");
     }
     try {
@@ -89,8 +108,7 @@ export async function updateTeacherByID(req, res) {
       });
     }
   } catch (error) {
-    console.log("2");
-    res.status(403).send({ message: " khong tim thay ID" });
+    res.status(403).send({ message: error.message });
   }
 }
 
@@ -98,7 +116,7 @@ export async function deleteTeacherByID(req, res) {
   const { id } = req.query;
   try {
     const check = await teachersModel.findById(id).exec();
-    if (check === null) {
+    if (!check) {
       throw new Error("ID not found");
     }
     try {
@@ -112,6 +130,6 @@ export async function deleteTeacherByID(req, res) {
       });
     }
   } catch (error) {
-    res.status(403).send({ message: "khong tim thay ID" });
+    res.status(403).send({ message: error.message });
   }
 }
