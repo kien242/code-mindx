@@ -1,12 +1,8 @@
 import express from "express";
 import "dotenv/config";
-import dbFunction from "./server/database/index.js";
-import mongoose from "mongoose";
-
-// collection: tap hop cac du lieu(document)
-// schema: dinh nghia mot document
-// database: noi luu tru cac collection
-dbFunction.connectToDb(); // connect to database
+import dbFunction from "./src/database/index.js";
+import teacherRoute from "./src/routers/teacher-routers.js";
+import studentRoute from "./src/routers/student-routers.js";
 
 const app = express();
 app.use(express.json());
@@ -18,10 +14,10 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/add-teacher", dbFunction.addTeacherToDb);
-app.get("/get-all-teachers", dbFunction.getAllTeacher);
-app.post("/add-student", dbFunction.addStudentToDb);
+app.use("/teacher", teacherRoute);
+app.use("/student", studentRoute);
 
 app.listen(process.env.PORT || 2402, () => {
+  dbFunction.connectToDb(); // connect to database
   console.log("App listen on PORT", process.env.PORT);
 });

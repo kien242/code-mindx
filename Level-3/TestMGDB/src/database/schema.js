@@ -12,7 +12,7 @@ const teacherSchema = new Schema({
   name: String,
   age: Number,
   address: String,
-  subject: String,
+  hobbies: String,
 });
 
 const classSchema = new Schema({
