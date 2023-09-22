@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   console.log("fasdh");
-  res.send({
+  res.json({
     message: "Thanh cong",
   });
 });
