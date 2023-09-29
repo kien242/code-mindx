@@ -16,6 +16,6 @@ app.use("/teacher", teacherRoute);
 app.use("/student", studentRoute);
 
 app.listen(Bun.env.PORT || 2402, () => {
-  dbFunction.connectToDb(); // connect to database server
+  dbFunction.connectToDb();
   console.log("App listen on PORT", Bun.env.PORT);
 });
